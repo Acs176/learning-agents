@@ -1,0 +1,4 @@
+imgs/
+**/__pycache__/
+testing-stuff/
+*.index
