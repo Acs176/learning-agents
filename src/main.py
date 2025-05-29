@@ -5,7 +5,7 @@ import os
 from glob import glob
 from PIL import Image
 import numpy as np
-from .web_search import google_crawl
+from .web_search.serp import get_top_results
 from .web_search.faiss_stuff import create_index_with_text, retrieve_relevant_docs
 from .web_search.llm import chat
 
@@ -49,7 +49,7 @@ def chat_loop():
     user_input = ""
     while user_input.lower() != "exit":
         user_input = input("Ask a question to the AI: ")
-        result_docs = google_crawl.get_top_results(user_input, 5)
+        result_docs = get_top_results(user_input, 5)
     
         index, text_chunks = create_index_with_text(result_docs)
         retrieved_info = retrieve_relevant_docs(user_input, index, text_chunks, 5)
