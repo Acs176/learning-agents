@@ -4,3 +4,4 @@ testing-stuff/
 *.index
 .env
 *.sh
+*.txt

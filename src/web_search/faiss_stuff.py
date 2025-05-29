@@ -4,7 +4,12 @@ from sentence_transformers import SentenceTransformer
 from transformers import AutoTokenizer
 import nltk
 
-
+class IndexStruct:
+    chunks: list[str]
+    index: faiss.Index
+    def __init__(self, chunks: list[str], index: faiss.Index):
+        self.chunks = chunks
+        self.index = index
 
 model_name_or_path="Alibaba-NLP/gte-multilingual-base"
 model = SentenceTransformer(model_name_or_path, trust_remote_code=True)
