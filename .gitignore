@@ -5,3 +5,5 @@ testing-stuff/
 .env
 *.sh
 *.txt
+.DS_Store
+*.json
